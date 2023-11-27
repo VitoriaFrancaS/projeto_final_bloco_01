@@ -2,14 +2,18 @@ package projeto;
 
 import java.util.Scanner;
 
-
+import projeto.controller.obraController;
 public class Menu {
 
 	public static void main(String[] args) {
+		
+		obraController livro = new obraController();
 
 		Scanner input = new Scanner(System.in);
+		
+		String titulo;
 
-		int op = 6;
+		int op = 0;
 
 		do {
 			System.out.println("----------------------------------------------------------");
@@ -21,35 +25,57 @@ public class Menu {
 			System.out.println("\n 5- Sair                                                ");
 			System.out.println("----------------------------------------------------------");
 			op = input.nextInt();
+			
+			
 
 			switch (op) {
 
 			case 1:
 				System.out.println("Adicione um título: ");
+				titulo = input.next();
 
+				keypress();
 				break;
 
 			case 2:
 				System.out.println("Liste todos os títulos");
+				livro.listarTitulos();
+				keypress();
 
 				break;
 
 			case 3:
 				System.out.println("Procurar o título");
-
+				titulo= input.next();
+				
+				livro.procurarPorTitulo(titulo);
+				
+				keypress();
 				break;
 
 			case 4:
 				System.out.println("Apagar um título ");
-
+				titulo= input.next();
+				
+					livro.deletarTitulo(titulo);
+					keypress();
 				break;
 
 			case 5:
-				System.out.println("Obrigada por comprar conosco, até a próxima!");
+				System.out.println("Aqui você começa a sonhar e não para mais, volte sempre");
+				
+				keypress();
+
+				break;
 
 			}
 
-		} while (op != 6);
+		} while (op != 5);
+	}
+
+	private static void keypress() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
