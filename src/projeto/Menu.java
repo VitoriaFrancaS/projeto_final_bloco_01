@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Menu {
 
 	public static void main(String[] args) {
+		
 		Scanner input = new Scanner(System.in);
 
-		float preco;
 
 		int op = 6;
 
@@ -18,25 +18,18 @@ public class Menu {
 			System.out.println("\n 2- Listar todos os títulos                             ");
 			System.out.println("\n 3- Procurar um título                                  ");
 			System.out.println("\n 4- Apagar um título                                    ");
-			System.out.println("\n 6- Sair                                                ");
+			System.out.println("\n 5- Sair                                                ");
 			System.out.println("----------------------------------------------------------");
 			op = input.nextInt();
 
 			switch (op) {
 
 			case 1:
-				input.nextLine();
 				System.out.println("Adicione um título: ");
-				String titulo = input.nextLine();
-				if (!titulo.isEmpty()) {
-					System.out.println("Título adicionada");
-				} else {
-					System.out.println("Erro ao adicionar título");
-				}
+				
 				break;
 
 			case 2:
-				
 				System.out.println("Liste todos os títulos");
 				
 				break;
@@ -45,6 +38,15 @@ public class Menu {
 				System.out.println("Procurar o título");
 				
 				break;
+				
+			case 4:
+				System.out.println("Apagar um título ");
+				
+				break;
+				
+			case 5: 
+				System.out.println("Obrigada por comprar conosco, até a próxima!");
+				
 			}
 
 		} while (op != 6);
